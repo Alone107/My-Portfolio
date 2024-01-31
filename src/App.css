@@ -1,0 +1,72 @@
+*{
+  scroll-behavior: smooth
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+nav a.active {
+  background-color: rgb(51 65 85);
+  color: rgb(203 213 225);
+};
+
+
+.anim {
+  width: 29ch;
+  color: white;
+  font-family: monospace;
+  font-size: 30px;
+  white-space: nowrap;
+  /* не переносить текст на другую строку */
+  overflow: hidden;
+  /* скрываем переполнение контентом */
+  border-right: 3px solid white;
+  /* рисуем курсор */
+  animation: cursor 0.75s step-end, printed_text 5s steps(29);
+}
+
+.texts {
+  width: 29ch;
+  color: transparent;
+  font-family: monospace;
+  font-size: 30px;
+  white-space: nowrap; /* не переносить текст на другую строку */
+  overflow: hidden; /* скрываем переполнение контентом */
+  animation: cursor 0.75s step-end infinite, printed_text 5s steps(29) infinite;
+  animation-delay: 1s;
+}
+
+@keyframes cursor {
+  0% {
+    border-color: rgba(226, 222, 222, 0.707);
+    color: white;
+
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: rgba(0, 0, 0, 0.827);
+
+  }
+}
+
+@keyframes printed_text {
+  from {
+    width: 0;
+  }
+}
+
+@media (max-width:640px) {
+  .text,
+  .texts {
+    font-size: 22px;
+    animation: none;
+    color: white;
+  }
+}

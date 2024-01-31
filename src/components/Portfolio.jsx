@@ -79,8 +79,8 @@ export default function Portfolio() {
                 alt=""
                 className="rounded-md duration-500 hover:scale-110  w-full p-2 h-3/5 object-contain"
               />
-              <div className=" flex items-center justify-center border-t-2 border-gray-600">
-                <button className="w-1/2 h-1/5 px-6 duration-200 hover:scale-105">
+              <div className=" flex items-center justify-center border-t-2  border-gray-600">
+                <button className="w-1/2 h-1/5 px-6 duration-200 hover:scale-105 mb-16 sm:mb-0">
                   <a href={href}> Demo</a>
                 </button>
               </div>

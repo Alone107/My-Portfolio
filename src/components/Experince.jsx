@@ -46,7 +46,7 @@ export default function Experince() {
   ];
 
   return (
-    <section id="Experience" className=" w-full h-screen">
+    <section id="Experience" className=" w-full h-screen pb-5">
       <div className="max-w-screen-lg mx-auto flex flex-col p-4 text-white items-center lg:items-start">
         <div>
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">

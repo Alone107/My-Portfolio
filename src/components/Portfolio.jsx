@@ -85,7 +85,8 @@ export default function Portfolio() {
               <button className="flex py-1 justify-center border-t-2 w-full border-gray-600 items-center sm:mb-0">
                 <a
                   className="text-center hover:scale-110 duration-200"
-                  href={href}
+                  href={href} 
+                  target="_blank"
                 >
                   Demo
                 </a>

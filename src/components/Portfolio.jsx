@@ -72,18 +72,17 @@ export default function Portfolio() {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-12 sm:px-0">
           {Portfolio.map(({ id, src, href, title }) => (
-            <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
+            <div key={id} className="flex flex-col items-center shadow-md shadow-gray-600 rounded-lg">
               <h3 className="text-center mt-4 mb-2 text-2xl h-1/5">{title}</h3>
               <img
                 src={src}
                 alt=""
                 className="rounded-md duration-500 hover:scale-110  w-full p-2 h-3/5 object-contain"
               />
-              <div className=" flex items-center justify-center border-t-2  border-gray-600">
-                <button className="w-1/2 h-1/5 px-6 duration-200 hover:scale-105 mb-16 sm:mb-0">
-                  <a href={href}> Demo</a>
+                <button className="flex justify-center border-t-2 w-full border-gray-600 items-center px-6 sm:mb-0">
+                  <a className="text-center hover:scale-105 duration-200" href={href}>Demo</a>
                 </button>
-              </div>
+              
             </div>
           ))}
         </div>

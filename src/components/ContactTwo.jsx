@@ -1,14 +1,17 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaTelegram, FaWhatsapp } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import '../App.css'
 
 const ContactTwo = () => {
+  const [modal, setModal] = useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setModal(true);
 
     emailjs.sendForm(
       "service_06xt6lw",
@@ -23,7 +26,7 @@ const ContactTwo = () => {
   return (
     <section
       id="Contact"
-      className=" text-white flex flex-col justify-center sm:items-center px-4 w-auto lg:w-full pb-10"
+      className=" text-white flex flex-col justify-center sm:items-center px-4 w-auto lg:w-full pb-32"
     >
       <div className="pb-10">
         <h5 className="text-4xl pb-2 text-center ">Связаться со мной</h5>
@@ -105,6 +108,19 @@ const ContactTwo = () => {
           </button>
         </form>
       </div>
+      {modal && (
+        <div className="bg-op fixed flex justify-center items-center w-full h-screen z-50 top-0 left-0">
+          <div className="rounded-2xl flex flex-col items-center justify-center  bg-slate-800 w-full mx-5 sm:mx-0 sm:w-5/12 h-96 shadow-lg hover:scale-105 duration-500 py-2 shadow-yellow-600">
+            <p className="text-xl sm:text-2xl lg:text-3xl">Скоро я с вами свяжусь :)</p>
+            <button
+              onClick={() => setModal(false)}
+              className="mt-20 p-4 bg-slate-500 rounded-3xl hover:scale-110 duration-500"
+            >
+              Закрыть окно
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
